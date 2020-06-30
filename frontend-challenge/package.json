@@ -2,6 +2,7 @@
   "name": "frontend-challenge",
   "version": "0.1.0",
   "private": true,
+  "prettier": "@wealthsystems/prettier-config",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -33,10 +34,12 @@
   },
   "devDependencies": {
     "@wealthsystems/eslint-config": "^1.0.0-alpha.11",
+    "@wealthsystems/prettier-config": "^1.0.0-alpha.1",
     "eslint": "^7.3.1",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.3",
-    "eslint-plugin-unicorn": "^20.1.0"
+    "eslint-plugin-unicorn": "^20.1.0",
+    "prettier": "^2.0.5"
   }
 }
