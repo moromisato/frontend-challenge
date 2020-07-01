@@ -1,0 +1,82 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 20vw;
+    background-color: white;
+    border-width: 1;
+    border-color: gray;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px
+}
+
+.title {
+    margin: 5px
+}
+
+.picture-container {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    margin-bottom: 15px;
+}
+
+.name-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    justify-content: center;
+}
+
+.name-container p {
+    font-size: 1em;
+}
+
+.active-status {
+    width: fit-content;
+    background-color: #c8e6c9;
+    border-radius: 5px;
+    margin-top: 3px;
+    padding: 5px;
+
+}
+
+.inactive-status {
+    width: fit-content;
+    background-color: #c62828;
+    border-radius: 5px;
+    margin-top: 3px;
+    padding: 5px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+}
+
+.items-description {
+    display: flex;
+    height: 4vh;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    margin: 5px;
+}
+
+.link {
+    color: #6495ed;
+    transition: opacity 0.2s;
+}
+
+.link:hover {
+    opacity: 0.5;
+}
