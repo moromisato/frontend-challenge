@@ -22,7 +22,7 @@ export const User = {
         'twitter': '',
         'linkedin': '',
     },
-    'oportunities': [
+    'opportunities': [
         { 'id': 1, 'type': 'won', 'value': 5000, 'obs': '' },
         { 'id': 2, 'type': 'won', 'value': 5000, 'obs': '' },
         { 'id': 3, 'type': 'won', 'value': 5000, 'obs': '' },
@@ -33,6 +33,40 @@ export const User = {
         { 'id': 1, 'type': 'discarted', 'value': 2000, 'obs': '' },
 
     ],
+
+    'opportunities': {
+        'total': 8,
+        'won': {
+            'total': 4,
+            'totalValue': 20000,
+            'values': [
+                { 'id': 1, 'type': 'won', 'value': 5000, 'obs': '' },
+                { 'id': 2, 'type': 'won', 'value': 5000, 'obs': '' },
+                { 'id': 3, 'type': 'won', 'value': 5000, 'obs': '' },
+                { 'id': 4, 'type': 'won', 'value': 5000, 'obs': '' },
+            ]
+        },
+        'lost': {
+            'total': 1,
+            'totalValue': 3000,
+            'values': [
+                { 'id': 5, 'type': 'lost', 'value': 3000, 'obs': '' },
+            ]
+        },
+        'opened': {
+            'total': 2,
+            'totalValue': 'Diversas Moedas',
+            'values': [
+                { 'id': 6, 'type': 'opened', 'value': null, 'obs': 'Diversas moedas' },
+                { 'id': 7, 'type': 'opened', 'value': null, 'obs': 'Diversas moedas' },
+            ]
+        },
+        'discarted': {
+            'total': 0,
+            'totalValue': 0,
+            'values': []
+        }
+    },
     'credit_limits': {
         'granted': 12000.20,
         'available': 3105
