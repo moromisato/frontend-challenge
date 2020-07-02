@@ -1,12 +1,14 @@
 import React from 'react'
 import InfoIcon from '@material-ui/icons/Info';
 import BaseIndicator from '../BaseIndicator'
+import { Link } from 'react-router-dom'
 
 import './styles.css'
 
 export default function OpportunitiesCard(props) {
 
     const indicator = {
+        'total': 7,
         'won': {
             'description': 'Ganhas',
             'total': 4,
@@ -46,7 +48,7 @@ export default function OpportunitiesCard(props) {
     return (
         <div className="card-container">
             <div className="title">
-                <p>Oportunidades ({indicator['won']['total']})</p>
+                <p>Oportunidades ({indicator['total']})</p>
                 <InfoIcon />
             </div>
 
@@ -55,6 +57,10 @@ export default function OpportunitiesCard(props) {
                 <BaseIndicator indicator={indicator['lost']}/>
                 <BaseIndicator indicator={indicator['opened']}/>
                 <BaseIndicator indicator={indicator['discarted']}/>
+            </div>
+
+            <div className="bottom-link">
+                <Link style={{textDecoration: 'none'}} to='/all-opportunities'><p>VER TODAS AS OPORTUNIDADES</p></Link>
             </div>
 
         </div>
