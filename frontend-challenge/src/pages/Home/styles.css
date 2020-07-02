@@ -17,3 +17,24 @@
     display: flex;
     flex-direction: row;
 }
+
+.first-column {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    flex: 1;
+}
+
+.second-column {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    flex: 1;
+}
+
+.third-column {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    flex: 2;
+}
