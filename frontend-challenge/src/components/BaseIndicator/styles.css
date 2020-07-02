@@ -1,0 +1,36 @@
+.base-container {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.number {
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 2em;
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+.column-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.indicator-title {
+    font-weight: bold;
+    margin: 5px;
+}
+
+.indicator-description {
+    color: #525252;
+    margin: 5px;
+}
