@@ -64,17 +64,32 @@ export const User = {
         'available': 3105
     },
     'financial_securities': {
-        'expired': [
-            { 'id': 1, 'value': 3105 }
-        ],
-        'expering': [
-            { 'id': 2, 'value': 3000 },
-            { 'id': 2, 'value': 105 },
-        ],
-        'paid': [
-            { 'id': 3, 'value': 105 },
-            { 'id': 4, 'value': 3000 },
-        ]
+        'expired': {
+            'description': 'Vencidos',
+            'total': 1,
+            'totalSum': 3105,
+            'values': [
+                { 'id': 1, 'value': 3105 }
+            ]
+        },
+        'expiring': {
+            'description': 'A vencer',
+            'total': 2,
+            'totalSum': 3105,
+            'values': [
+                { 'id': 2, 'value': 3000 },
+                { 'id': 2, 'value': 105 },
+            ]
+        },
+        'paid': {
+            'description': 'Pagos',
+            'total': 2,
+            'totalSum': 3105,
+            'values': [
+                { 'id': 3, 'value': 3000 },
+                { 'id': 4, 'value': 105 },
+            ]
+        },
     },
     'activities': [
         {'id': 1, 'type': 'Em atraso', 'description': 'Ligação de agendamento da reunião', 'responsible': 'Erica Collins', 'date': '30/06/2020 15:00'},
