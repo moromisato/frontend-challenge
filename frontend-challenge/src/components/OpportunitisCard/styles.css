@@ -1,0 +1,25 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 20vw;
+    background-color: white;
+    border-width: 1;
+    border-color: gray;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
