@@ -1,7 +1,9 @@
 .financial-titles-container {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    width: 20vw;
+    height: 100%;
+    width: 100%;
     margin: 5px;
     padding: 10px;
     border-radius: 5px;

@@ -1,5 +1,6 @@
 .home-container {
     display: flex;
+    flex: 1;
     flex-direction: column;
 }
 
@@ -20,21 +21,24 @@
 
 .first-column {
     display: flex;
+    flex: 1;
+    height: 95vh;
     padding: 10px;
     flex-direction: column;
-    flex: 1;
 }
 
 .second-column {
     display: flex;
+    flex: 1;
+    height: 95vh;
     padding: 10px;
     flex-direction: column;
-    flex: 1;
 }
 
 .third-column {
     display: flex;
+    flex: 2;
+    height: 100%;
     padding: 10px;
     flex-direction: column;
-    flex: 2;
 }
