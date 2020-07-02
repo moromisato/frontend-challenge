@@ -3,11 +3,12 @@ import Menu from '@material-ui/icons/Menu';
 import IdentifcationCard from '../../components/IdentifcationCard';
 import OpportunitiesCard from '../../components/OpportunitisCard';
 import SalesCard from '../../components/SalesCard';
+import CreditLimitCard from '../../components/CreditLimitCard';
+import FinancialSecuritiesCard from '../../components/FinancialSecuritiesCard';
+import LocationCard from '../../components/LocationCard';
 
 import { User } from '../../mock';
 import './styles.css';
-import CreditLimitCard from '../../components/CreditLimitCard';
-import FinancialSecuritiesCard from '../../components/FinancialSecuritiesCard';
 
 export default function Home() {
     const [user, setUser] = useState({});
@@ -32,6 +33,7 @@ export default function Home() {
                     <SalesCard />
                 </div>
                 <div className="second-column">
+                    <LocationCard location={user['location']} />
                     <CreditLimitCard creditLimits={user['credit_limits']} />
                     <FinancialSecuritiesCard financialSecurities={user['financial_securities']} />
                 </div>
