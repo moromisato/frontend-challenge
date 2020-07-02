@@ -6,6 +6,7 @@ import SalesCard from '../../components/SalesCard';
 
 import { User } from '../../mock';
 import './styles.css';
+import CreditLimitCard from '../../components/CreditLimitCard';
 
 export default function Home() {
     const [user, setUser] = useState({});
@@ -24,9 +25,17 @@ export default function Home() {
                 <Menu />
             </div>
             <div className="body">
-                <IdentifcationCard user={user} />
-                <OpportunitiesCard opportunities={user['opportunities']} />
-                <SalesCard />
+                <div className="first-column">
+                    <IdentifcationCard user={user} />
+                    <OpportunitiesCard opportunities={user['opportunities']} />
+                    <SalesCard />
+                </div>
+                <div className="second-column">
+                    <CreditLimitCard creditLimits={user['credit_limits']} />
+                </div>
+                <div className="third-column">
+                    
+                </div>
             </div>
         </div>
     );
