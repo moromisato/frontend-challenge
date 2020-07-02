@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Menu from '@material-ui/icons/Menu'
 import IdentifcationCard from '../../components/IdentifcationCard'
+import OpportunitiesCard from '../../components/OpportunitisCard'
 
 import { User } from '../../mock'
 import './styles.css'
@@ -11,7 +12,6 @@ export default function Home() {
 
     useEffect(() => {
         
-        console.log('chamado')
         function loadUser() {
             return User
         }
@@ -27,6 +27,7 @@ export default function Home() {
             </div>
             <div className="body">
                 <IdentifcationCard user={user} />
+                <OpportunitiesCard opportunities={user['opportunities']} />
             </div>
         </div>
     )
