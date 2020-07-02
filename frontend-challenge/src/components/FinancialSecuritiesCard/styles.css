@@ -1,0 +1,13 @@
+.financial-titles-container {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.financial-card-title {
+    margin-bottom: 10px;
+}
