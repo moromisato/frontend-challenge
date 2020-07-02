@@ -67,7 +67,7 @@ export const User = {
         'expired': {
             'description': 'Vencidos',
             'total': 1,
-            'totalSum': 3105,
+            'totalValue': 3105,
             'values': [
                 { 'id': 1, 'value': 3105 }
             ]
@@ -75,7 +75,7 @@ export const User = {
         'expiring': {
             'description': 'A vencer',
             'total': 2,
-            'totalSum': 3105,
+            'totalValue': 3105,
             'values': [
                 { 'id': 2, 'value': 3000 },
                 { 'id': 2, 'value': 105 },
@@ -84,7 +84,7 @@ export const User = {
         'paid': {
             'description': 'Pagos',
             'total': 2,
-            'totalSum': 3105,
+            'totalValue': 3105,
             'values': [
                 { 'id': 3, 'value': 3000 },
                 { 'id': 4, 'value': 105 },
