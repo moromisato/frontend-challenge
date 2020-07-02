@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { numberFormat } from '../../utils/FormatFunctions'
 
 import './styles.css'
 
@@ -22,31 +23,17 @@ export default function BaseIndicator(props) {
 
     }, [description])
 
-    function numberFormat(value) {
-
-        if ( value === 0 ) {
-            return '-'
-        } else if ( typeof(value) === 'string' ) {
-            return value
-        }
-
-        return new Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-        }).format(value);
-    }
-
     return (
         <div className="base-container">
             <div className="number" style={{backgroundColor: bgColor}}>
-                <p>{total}</p>
+                <p>{ total }</p>
             </div>
             <div className="column-details">
                 <div className="indicator-title">
-                    {description}
+                    { description }
                 </div>
                 <div className="indicator-description">
-                    {numberFormat(totalValue)}
+                    { numberFormat(totalValue) }
                 </div>
             </div>
         </div>
