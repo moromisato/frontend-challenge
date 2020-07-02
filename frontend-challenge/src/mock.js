@@ -22,21 +22,10 @@ export const User = {
         'twitter': '',
         'linkedin': '',
     },
-    'opportunities': [
-        { 'id': 1, 'type': 'won', 'value': 5000, 'obs': '' },
-        { 'id': 2, 'type': 'won', 'value': 5000, 'obs': '' },
-        { 'id': 3, 'type': 'won', 'value': 5000, 'obs': '' },
-        { 'id': 4, 'type': 'won', 'value': 5000, 'obs': '' },
-        { 'id': 1, 'type': 'opened', 'value': null, 'obs': 'Diversas moedas' },
-        { 'id': 1, 'type': 'opened', 'value': null, 'obs': 'Diversas moedas' },
-        { 'id': 1, 'type': 'lost', 'value': 3000, 'obs': '' },
-        { 'id': 1, 'type': 'discarted', 'value': 2000, 'obs': '' },
-
-    ],
-
     'opportunities': {
         'total': 8,
         'won': {
+            'description': 'Ganhas',
             'total': 4,
             'totalValue': 20000,
             'values': [
@@ -47,6 +36,7 @@ export const User = {
             ]
         },
         'lost': {
+            'description': 'Perdidas',
             'total': 1,
             'totalValue': 3000,
             'values': [
@@ -54,6 +44,7 @@ export const User = {
             ]
         },
         'opened': {
+            'description': 'Abertas',
             'total': 2,
             'totalValue': 'Diversas Moedas',
             'values': [
@@ -62,6 +53,7 @@ export const User = {
             ]
         },
         'discarted': {
+            'description': 'Descartadas',
             'total': 0,
             'totalValue': 0,
             'values': []
