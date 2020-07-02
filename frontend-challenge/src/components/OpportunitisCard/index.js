@@ -53,10 +53,10 @@ export default function OpportunitiesCard(props) {
             </div>
 
             <div className="main-content">
-                <BaseIndicator indicator={indicator['won']}/>
-                <BaseIndicator indicator={indicator['lost']}/>
-                <BaseIndicator indicator={indicator['opened']}/>
-                <BaseIndicator indicator={indicator['discarted']}/>
+                <BaseIndicator indicator={indicator['won']} renderFirst='description'/>
+                <BaseIndicator indicator={indicator['lost']} renderFirst='description'/>
+                <BaseIndicator indicator={indicator['opened']} renderFirst='description'/>
+                <BaseIndicator indicator={indicator['discarted']} renderFirst='description'/>
             </div>
 
             <div className="bottom-link">
