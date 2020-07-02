@@ -16,7 +16,7 @@ import './styles.css'
 export default function IdentificationCard(props) {
 
     useEffect(() => {
-        console.log('props ' + JSON.stringify(props.user.email))
+        //console.log('props ' + JSON.stringify(props.user.email))
     }, [props])
 
     function renderStatus(status) {
@@ -67,7 +67,6 @@ export default function IdentificationCard(props) {
                 <Link className="link" to={props.user.social_media ? props.user.social_media.twitter : ''}><TwitterIcon style={{margin: 5}} /></Link>
                 <Link className="link" to={props.user.social_media ? props.user.social_media.linkedin : ''}><LinkedInIcon style={{margin: 5}} /></Link>
             </div>
-           
             
         </div>
     )
