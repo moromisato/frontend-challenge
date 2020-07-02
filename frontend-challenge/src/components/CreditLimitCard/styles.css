@@ -1,0 +1,22 @@
+.credit-limit-container {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+}
+
+.credit-limit-title {
+    margin-bottom: 10px;
+}
+
+.limit {
+    margin-bottom: 10px;
+}
+
+.limit p {
+    margin-bottom: 5px;
+    font-size: 1.3em;
+}
