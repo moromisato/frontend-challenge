@@ -1,8 +1,8 @@
 .card-container {
     display: flex;
+    flex: 1;
+    width: 100%;
     flex-direction: column;
-    height: fit-content;
-    width: 20vw;
     background-color: white;
     border-width: 1;
     border-color: gray;

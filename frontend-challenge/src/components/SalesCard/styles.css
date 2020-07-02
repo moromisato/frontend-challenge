@@ -1,6 +1,8 @@
 .sales-container {
-    height: 30vh;
-    width: 20vw;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    width: 100%;
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
