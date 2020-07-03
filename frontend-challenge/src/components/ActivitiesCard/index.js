@@ -1,29 +1,104 @@
 import React, { useEffect, useState } from 'react'
 import SmallIndicator from '../SmallIndicator';
+import AcitivityDescription from '../ActivityDescription';
 
+import { getDescriptionColor } from '../../utils/AssetsFunctions'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-import SchoolIcon from '@material-ui/icons/School';
-import WorkIcon from '@material-ui/icons/Work';
 import SearchIcon from '@material-ui/icons/Search';
-import StarIcon from '@material-ui/icons/Star';
+
 import './styles.css'
 
 export default function ActivitiesCard(props) {
 
     const [ searchTerm, setSearchTerm ] = useState('')
     const [ total, setTotal ] = useState(0)
+    const [ activitiesObject, setActivitiesObject ] = useState({})
+    const [ originalActivities, setOriginalActivities ] = useState([])
+    const [ filteredActivities, setFilteredActivities ] = useState([])
 
     useEffect(() => {
         if ( props.activities !== undefined ) {
             setTotal(props.activities.total)
-            console.log(Object.keys(props.activities))
+            setActivitiesObject(props.activities)
+            setOriginalActivities(extractAllActivities(props.activities))
+            setFilteredActivities(extractAllActivities(props.activities))
         }
     }, [props])
 
     function handleSearch(e) {
         e.preventDefault();
+    }
+
+    function extractAllActivities(activitiesObject) {
+        let allActivities = []
+
+        let keys = Object.keys(activitiesObject)
+
+        keys.map((key) => {
+            if ( key !== 'total' ) {
+                allActivities.push(...activitiesObject[key]['values'])
+            }
+        })
+
+        return allActivities
+    }
+
+    function renderActivities() {
+
+        let activities = []
+        let activitiesTimeLineEntries = []
+
+        function renderInnerValues(description, innerValues) {
+            let values = []
+
+            innerValues.map((value) => {
+                values.push(
+                    <AcitivityDescription key={value.id} description={description} value={value} />
+                )
+            })
+
+            return values
+        }
+
+        let keys = Object.keys(activitiesObject)
+
+        keys.map((key) => {
+            if ( key !== 'total' ) {
+                let activityEntry = {
+                    'activityId': activitiesObject[key]['activity_id'], 
+                    'description': activitiesObject[key]['description'],
+                    'total': activitiesObject[key]['total'],
+                    'values': activitiesObject[key]['values']
+                }
+
+                activities.push(activityEntry)
+                        
+            }
+        })
+
+        activities.map((activity) => {
+
+            if ( activity['values'].length > 0 ) {
+                activitiesTimeLineEntries.push(
+                    <VerticalTimelineElement
+                        style={{margin: 0}}
+                        key={activity['activityId']}
+                        className="vertical-timeline-element--work"
+                        iconStyle={{ background: getDescriptionColor(activity['description']) , color: '#fff' }}
+                    >
+                            <h3 className="vertical-timeline-element-title">{activity['description']}</h3>
+                            
+                            {renderInnerValues( activity['description'], activity['values'])}
+    
+                    </VerticalTimelineElement>
+                )
+            }
+
+        })
+
+        return activitiesTimeLineEntries
     }
 
     return (
@@ -95,101 +170,14 @@ export default function ActivitiesCard(props) {
                 </div>
             </div>
 
-           {/*  <div className="activities-time-line hideScrollbar">
+
+            <div className="activities-time-line hide-scrollbar">
 
                 <VerticalTimeline layout='1-column' className="vertical-timeline-custom-line" >
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#fff', color: '#525252' }}
-                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                        date="2011 - present"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', border: '0px'}}
-                    >
-                        <h3 className="vertical-timeline-element-title">Creative Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-                        <p>
-                        Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2010 - 2011"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<WorkIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Art Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                        <p>
-                        Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2008 - 2010"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<WorkIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                        <p>
-                        User Experience, Visual Design
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2006 - 2008"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<WorkIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                        <p>
-                        User Experience, Visual Design
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="April 2013"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                        icon={<SchoolIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-                        <p>
-                        Strategy, Social Media
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="November 2012"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                        icon={<SchoolIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-                        <p>
-                        Creative Direction, User Experience, Visual Design
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="2002 - 2006"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                        icon={<SchoolIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-                        <p>
-                        Creative Direction, Visual Design
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                        icon={<StarIcon />}
-                    />
+                    {renderActivities()}
                 </VerticalTimeline>
 
-            </div> */}
+            </div>
 
         </div>
     )
