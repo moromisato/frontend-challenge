@@ -46,7 +46,6 @@ export default function ActivitiesCard(props) {
     } */
 
     function keepActivityKey(key) {
-
         let filteredKeys = activitiesKeys.slice()
         let originalKeys = originalActivitiesKey.slice()
         let index = activitiesKeys.indexOf(key)
@@ -70,7 +69,39 @@ export default function ActivitiesCard(props) {
             }
 
         }
-        
+    }
+
+    function renderSmallIndicators(keys) {
+
+        let smallIndicators = []
+
+        keys.map((key) => {
+
+            let isSelected = activitiesKeys.includes(key) ? true : false
+
+            if ( key === 'total' ) {
+                smallIndicators.push(
+                    <SmallIndicator 
+                        value={ props.activities !== undefined ? props.activities[key] : '' }
+                        description={ props.activities !== undefined ? originalActivitiesKey[0].charAt(0).toUpperCase() + originalActivitiesKey[0].slice(1) : '' }
+                        isSelected={ isSelected }
+                        callBackKey={ key }
+                        callBack={keepActivityKey} />
+                )    
+            } else {
+                smallIndicators.push(
+                    <SmallIndicator 
+                        value={ props.activities !== undefined ? props.activities[key]['total'] : '' } 
+                        description={ props.activities !== undefined ? props.activities[key]['description'] : '' }
+                        isSelected={ isSelected }
+                        callBackKey={ key }
+                        callBack={keepActivityKey} />
+                )
+            }
+        })
+
+        return smallIndicators
+
     }
 
     function renderInnerValues(description, innerValues) {
@@ -217,50 +248,9 @@ export default function ActivitiesCard(props) {
             </div>
 
             <div className="activities-indicators">
-                <div className="small-indicator-container" onClick={() => keepActivityKey('total')}>
-                    <div className="value" style={{backgroundColor: '#6d6d6d', color: 'white'}}>
-                        <p>{total}</p>
-                    </div>
-                    <div className="description">
-                        <p>Total</p>
-                    </div>
-                </div>
+                
+                { renderSmallIndicators(originalActivitiesKey) }
 
-                <div className="small-indicator-container" onClick={() => keepActivityKey(originalActivitiesKey[1])}>
-                    <div className="value" style={{backgroundColor: 'red', color: 'white'}}>
-                        <p>{props.activities !== undefined ? props.activities['late']['total'] : ''}</p>
-                    </div>
-                    <div className="description">
-                        <p>{props.activities !== undefined ? props.activities['late']['description'] : ''}</p>
-                    </div>
-                </div>
-
-                <div className="small-indicator-container" onClick={() => keepActivityKey(originalActivitiesKey[2])}>
-                    <div className="value" style={{backgroundColor: 'blue', color: 'white'}}>
-                        <p>{props.activities !== undefined ? props.activities['in_progress']['total'] : ''}</p>
-                    </div>
-                    <div className="description">
-                        <p>{props.activities !== undefined ? props.activities['in_progress']['description'] : ''}</p>
-                    </div>
-                </div>
-
-                <div className="small-indicator-container" onClick={() => keepActivityKey(originalActivitiesKey[3])}>
-                    <div className="value" style={{backgroundColor: 'orange', color: 'white'}}>
-                        <p>{props.activities !== undefined ? props.activities['expected']['total'] : ''}</p>
-                    </div>
-                    <div className="description">
-                        <p>{props.activities !== undefined ? props.activities['expected']['description'] : ''}</p>
-                    </div>
-                </div>
-
-                <div className="small-indicator-container" onClick={() => keepActivityKey(originalActivitiesKey[4])}>
-                    <div className="value" style={{backgroundColor: 'green', color: 'white'}}>
-                        <p>{props.activities !== undefined ? props.activities['finished']['total'] : ''}</p>
-                    </div>
-                    <div className="description">
-                        <p>{props.activities !== undefined ? props.activities['finished']['description'] : ''}</p>
-                    </div>
-                </div>
             </div>
 
 

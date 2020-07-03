@@ -30,29 +30,6 @@
     cursor: pointer;
 }
 
-.small-indicator-container {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 10px;
-    margin-left: 5px;
-}
-
-.value {
-    width: 1.6em;
-    height: 1.6em;
-    line-height: 1.6em;
-    margin-right: 10px;
-    border-radius: 5px;
-    font-size: 1.3em;
-    text-align: center;
-}
-
-.description {
-    background-color: white;
-}
-
 .activities-time-line {
     height: 75vh;
     margin-top: 25px;
