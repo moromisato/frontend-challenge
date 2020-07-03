@@ -39,7 +39,7 @@ export default function Home() {
                     <FinancialSecuritiesCard financialSecurities={user['financial_securities']} />
                 </div>
                 <div className="third-column">
-                    <ActivitiesCard />
+                    <ActivitiesCard activities={user['activities']} />
                 </div>
             </div>
         </div>
