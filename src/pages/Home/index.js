@@ -15,6 +15,7 @@ export default function Home() {
     const [user, setUser] = useState({});
 
     useEffect(() => {
+        document.title = 'Frontend challenge'
         function loadUser() {
             return User;
         }
