@@ -11,6 +11,11 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.location-title {
+    margin: 5px;
+    font-size: 1.5em;
+}
+
 .location-map {
     flex: 1;
     margin: 10px;

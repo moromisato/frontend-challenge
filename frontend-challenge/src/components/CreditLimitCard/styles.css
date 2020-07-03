@@ -11,10 +11,13 @@
 }
 
 .credit-limit-title {
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin: 5px;
+    margin-bottom: 15px;
 }
 
 .limit {
+    margin-left: 10px;
     margin-bottom: 10px;
 }
 

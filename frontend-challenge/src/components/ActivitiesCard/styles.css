@@ -11,6 +11,8 @@
 
 .activities-search {
     margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .search-container {
@@ -25,8 +27,15 @@
     border: none;
 }
 
+.activities-title {
+    font-size: 1.5em;
+    margin: 5px;
+}
+
 .activities-indicators {
     display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
     flex-direction: row;
     cursor: pointer;
 }

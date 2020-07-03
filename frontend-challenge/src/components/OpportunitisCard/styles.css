@@ -21,6 +21,7 @@
 
 .main-content {
     display: flex;
+    margin: 5px;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -32,5 +33,6 @@
 }
 
 .bottom-link p {
+    margin-top: 20px;
     text-decoration: none;
 }

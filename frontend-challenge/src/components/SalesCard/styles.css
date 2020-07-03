@@ -12,6 +12,11 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.sales-title {
+    font-size: 1.5em;
+    margin: 5px;
+}
+
 .sales-chart {
     flex: 1;
     height: 100%;

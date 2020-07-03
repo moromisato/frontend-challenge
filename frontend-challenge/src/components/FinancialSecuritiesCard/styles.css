@@ -12,5 +12,10 @@
 }
 
 .financial-card-title {
+    font-size: 1.5em;
     margin-bottom: 10px;
+}
+
+.titles {
+    margin-left: 15px;
 }

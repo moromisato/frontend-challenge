@@ -52,15 +52,17 @@ export default function OpportunitiesCard(props) {
                 <InfoIcon />
             </div>
 
-            <div className="main-content">
-                <BaseIndicator indicator={indicator['won']} renderFirst='description'/>
-                <BaseIndicator indicator={indicator['lost']} renderFirst='description'/>
-                <BaseIndicator indicator={indicator['opened']} renderFirst='description'/>
-                <BaseIndicator indicator={indicator['discarted']} renderFirst='description'/>
-            </div>
+            <div className="content-group">
+                <div className="main-content">
+                    <BaseIndicator indicator={indicator['won']} renderFirst='description'/>
+                    <BaseIndicator indicator={indicator['lost']} renderFirst='description'/>
+                    <BaseIndicator indicator={indicator['opened']} renderFirst='description'/>
+                    <BaseIndicator indicator={indicator['discarted']} renderFirst='description'/>
+                </div>
 
-            <div className="bottom-link">
-                <Link style={{textDecoration: 'none'}} to='/all-opportunities'><p>VER TODAS AS OPORTUNIDADES</p></Link>
+                <div className="bottom-link">
+                    <Link style={{textDecoration: 'none'}} to='/all-opportunities'><p>VER TODAS AS OPORTUNIDADES</p></Link>
+                </div>
             </div>
 
         </div>

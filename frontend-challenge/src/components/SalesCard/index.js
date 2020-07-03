@@ -27,7 +27,6 @@ export default function SalesCard() {
 
         predictPoints.push(nextDataPointPredict)
 
-
         let data = {
             labels: labels,
             datasets: [
