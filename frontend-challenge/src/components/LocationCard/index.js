@@ -1,7 +1,26 @@
 import React from 'react'
 import './styles.css'
 
+import Map from 'pigeon-maps'
+import Marker from 'pigeon-marker'
+
 export default function LocationCard() {
+
+    function mapTilerProvider (x, y, z, dpr) {
+        const s = String.fromCharCode(97 + (x + y + z) % 3)
+        return `https://${s}.tile.openstreetmap.org/${z}/${x}/${y}.png`
+    }
+
+/*     osm: (x, y, z) => {
+        const s = String.fromCharCode(97 + (x + y + z) % 3)
+        return https://${s}.tile.openstreetmap.org/${z}/${x}/${y}.png
+      },
+      stamenTerrain: (x, y, z, dpr) => {
+        return https://stamen-tiles.a.ssl.fastly.net/terrain/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}.jpg
+      },
+      stamenToner: (x, y, z, dpr) => {
+        return https://stamen-tiles.a.ssl.fastly.net/toner/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}.png
+      } */
 
     return (
         <div className="location-container">
@@ -9,7 +28,12 @@ export default function LocationCard() {
                 Local
             </div>
             <div className="location-map">
-                Adicionar um mapa aqui
+                <Map
+                    provider={mapTilerProvider}
+                    zoom={18}
+                    center={[-24.9466465,-53.4411419]} >
+                    <Marker anchor={[-24.9466465,-53.4411419]} />
+                </Map>
             </div>
         </div>
     )
