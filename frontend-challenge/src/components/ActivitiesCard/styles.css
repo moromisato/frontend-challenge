@@ -27,6 +27,7 @@
 .activities-indicators {
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .small-indicator-container {
