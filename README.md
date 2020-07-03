@@ -1,6 +1,7 @@
 # Bibliotecas e justificativas
 
 Esse projeto foi criado utilizando [Create React App](https://github.com/facebook/create-react-app).
+
 Este repositório contém o <i>frontend challenge</i>, feito em ReactJS e utiliza as seguintes bibliotecas:
 
 * [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
