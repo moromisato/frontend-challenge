@@ -7,11 +7,11 @@ Este repositório contém o <i>frontend challenge</i>, feito em ReactJS e utiliz
 * [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
   <p>Apesar de possuir apenas uma página, essa biblioteca foi escolhida pensando na possibilidade de adicionar fácilmente novas rotas ao projeto.</p>
 * [pigeon-maps](https://github.com/mariusandra/pigeon-maps)
-  <p>Essa biblioteca foi escolhida para ser utilizada no componente que possui mapa, devido a sua facilidade de instalação e utlização sem precisar de nenhum tipo de *access token*</p>
+  <p>Essa biblioteca foi escolhida para ser utilizada no componente que possui mapa, devido a sua facilidade de instalação e utlização sem precisar de nenhum tipo de <i>access token</i></p>
 * [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2)
-  <p>Essa biblioteca foi escolhida por ser um *wrapper* de uma biblioteca muito famosa do JavaScript, o chartjs. Ela é de fácil instalação e utilização.</p>
+  <p>Essa biblioteca foi escolhida por ser um <i>wrapper</i> de uma biblioteca muito famosa do JavaScript, o chartjs. Ela é de fácil instalação e utilização.</p>
 * [react-vertical-timeline-component](https://github.com/stephane-monnot/react-vertical-timeline)
-  <p>Essa biblioteca foi escolhida para fazer parte do componente de *timeline* para que não fosse necessário reimplementar algo que já existia e atendia as necessidades do projeto </p>
+  <p>Essa biblioteca foi escolhida para fazer parte do componente de <i>timeline</i> para que não fosse necessário reimplementar algo que já existia e atendia as necessidades do projeto </p>
 
 
 # Rodando o projeto
@@ -86,7 +86,7 @@ Componente responsável por mostrar os títulos financeiros do cliente, ele tamb
 ## *ActivitiesCard*
 Componente responsável por mostrar as atividades do cliente, independente de quantas categorias de atividade ele tenha, ele também possui um campo de pesquisa que pode ser utilizado para filtrar as atividades, para filtrar por categorias é necessário clicar nas mesmas que se encontram abaixo do campo de busca.
 <p align="center">
-<img src="https://github.com/moromisato/frontend-challenge/blob/master/src/screenshots/activities_card.png" width="400" heigh="265" />
+<img src="https://github.com/moromisato/frontend-challenge/blob/master/src/screenshots/activities_card.png" width="800" heigh="530" />
 <p>
 
 ## *SmallIndicator*
@@ -102,19 +102,3 @@ Componente renderizado dentro das categorias de atividades.
 <img src="https://github.com/moromisato/frontend-challenge/blob/master/src/screenshots/activity_description_2.png" width="400" heigh="265" />
 <img src="https://github.com/moromisato/frontend-challenge/blob/master/src/screenshots/activity_description_3.png" width="400" heigh="265" />
 <p>
-
-
-
-
-
-
-## *SmallIndicator*
-
-
-
-
-
-
-
-
-
