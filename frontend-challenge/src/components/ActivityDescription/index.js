@@ -15,9 +15,9 @@ export default function AcitivityDescription(props) {
                 {getIcon(value['cathegory'], description)}
             </div>
             <div className="description-texts">
-                <p className="description-text" key={value.id}>{value['description']}</p>
-                <p className="description-responsible" key={value.id}>{value['responsible']}</p>
-                <p className="description-date" key={value.id}>{value['date']}</p>
+                <p className="description-text">{value['description']}</p>
+                <p className="description-responsible">{value['responsible']}</p>
+                <p className="description-date">{value['date']}</p>
             </div>
         </div>
     )
