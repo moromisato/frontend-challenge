@@ -94,6 +94,7 @@ export const User = {
     'activities': {
         'total': 25,
         'late': {
+            'activity_id': 1,
             'description': 'Em atraso',
             'total': 1,
             'values': [
@@ -101,41 +102,44 @@ export const User = {
             ]
         },
         'in_progress': {
+            'activity_id': 2,
             'description': 'Em andamento',
             'total': 0,
             'values': []
         },
         'expected': {
+            'activity_id': 3,
             'description': 'Previstas',
             'total': 3,
             'values': [
-                {'id': 1, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
-                {'id': 2, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
-                {'id': 3, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'}
+                {'id': 2, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
+                {'id': 3, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
+                {'id': 4, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'}
             ]
         },
         'finished': {
+            'activity_id': 4,
             'description': 'Concluídas',
             'total': 21,
             'values': [
-                {'id': 1, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
-                {'id': 2, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
-                {'id': 3, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
-                {'id': 4, 'description': 'Ligação contrato', 'cathegory': 'meeting', 'responsible': 'Dylan Watsor', 'date': '03/07/2020 10:00'},
-                {'id': 5, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
-                {'id': 6, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
-                {'id': 7, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
-                {'id': 8, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
-                {'id': 9, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
-                {'id': 10, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
-                {'id': 11, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
-                {'id': 12, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
-                {'id': 13, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
-                {'id': 14, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
-                {'id': 15, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
-                {'id': 16, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
-                {'id': 17, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
-                {'id': 18, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'}
+                {'id': 5, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
+                {'id': 6, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
+                {'id': 7, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
+                {'id': 8, 'description': 'Ligação contrato', 'cathegory': 'meeting', 'responsible': 'Dylan Watsor', 'date': '03/07/2020 10:00'},
+                {'id': 9, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
+                {'id': 10, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
+                {'id': 11, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
+                {'id': 12, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
+                {'id': 13, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
+                {'id': 14, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
+                {'id': 15, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
+                {'id': 16, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
+                {'id': 17, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
+                {'id': 18, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
+                {'id': 19, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'},
+                {'id': 20, 'description': 'Reunião orçamento', 'cathegory': 'meeting', 'responsible': 'Abigail Fisher', 'date': '03/07/2020 10:00'},
+                {'id': 21, 'description': 'Email documentação', 'cathegory': 'email', 'responsible': 'Jeffery King', 'date': '03/07/2020 09:00'},
+                {'id': 22, 'description': 'Almoço cooperativo', 'cathegory': 'schedule', 'responsible': 'Lawrence Kelly', 'date': '03/07/2020 15:00'}
             ]
         }
     }
