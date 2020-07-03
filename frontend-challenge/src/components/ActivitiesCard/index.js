@@ -15,23 +15,23 @@ export default function ActivitiesCard(props) {
     const [ searchTerm, setSearchTerm ] = useState('')
     const [ total, setTotal ] = useState(0)
     const [ activitiesObject, setActivitiesObject ] = useState({})
-    const [ originalActivities, setOriginalActivities ] = useState([])
-    const [ filteredActivities, setFilteredActivities ] = useState([])
+    const [ activitiesKeys, setActivitiesKey ] = useState([])
+    const [ originalActivitiesKey, setOriginalActivitiesKey ] = useState([])
 
     useEffect(() => {
         if ( props.activities !== undefined ) {
             setTotal(props.activities.total)
             setActivitiesObject(props.activities)
-            setOriginalActivities(extractAllActivities(props.activities))
-            setFilteredActivities(extractAllActivities(props.activities))
+            setOriginalActivitiesKey(Object.keys(props.activities))
+            setActivitiesKey(Object.keys(props.activities))
         }
     }, [props])
 
-    function handleSearch(e) {
+/*     function handleSearch(e) {
         e.preventDefault();
-    }
+    } */
 
-    function extractAllActivities(activitiesObject) {
+    /* function extractAllActivities(activitiesObject) {
         let allActivities = []
 
         let keys = Object.keys(activitiesObject)
@@ -43,6 +43,46 @@ export default function ActivitiesCard(props) {
         })
 
         return allActivities
+    } */
+
+    function keepActivityKey(key) {
+
+        let filteredKeys = activitiesKeys.slice()
+        let originalKeys = originalActivitiesKey.slice()
+        let index = activitiesKeys.indexOf(key)
+
+        if ( index !== -1 ) {
+            
+            if ( key === 'total' ) {
+                filteredKeys = originalKeys
+            } else {
+                filteredKeys = ['total', key]
+            }
+    
+            console.log(filteredKeys)
+            setActivitiesKey(filteredKeys)
+
+        } else {
+            if ( key !== 'total' ) {
+                console.log(key)
+                filteredKeys = [...filteredKeys, key]
+                setActivitiesKey(filteredKeys)
+            }
+
+        }
+        
+    }
+
+    function renderInnerValues(description, innerValues) {
+        let values = []
+
+        innerValues.map((value, index) => {
+            values.push(
+                <AcitivityDescription key={index} description={description} value={value} />
+            )
+        })
+
+        return values
     }
 
     function renderActivities() {
@@ -50,21 +90,9 @@ export default function ActivitiesCard(props) {
         let activities = []
         let activitiesTimeLineEntries = []
 
-        function renderInnerValues(description, innerValues) {
-            let values = []
+        //let keys = Object.keys(activitiesObject)
 
-            innerValues.map((value) => {
-                values.push(
-                    <AcitivityDescription key={value.id} description={description} value={value} />
-                )
-            })
-
-            return values
-        }
-
-        let keys = Object.keys(activitiesObject)
-
-        keys.map((key) => {
+        activitiesKeys.map((key) => {
             if ( key !== 'total' ) {
                 let activityEntry = {
                     'activityId': activitiesObject[key]['activity_id'], 
@@ -74,7 +102,8 @@ export default function ActivitiesCard(props) {
                 }
 
                 activities.push(activityEntry)
-                        
+            } else {
+                return
             }
         })
 
@@ -103,18 +132,6 @@ export default function ActivitiesCard(props) {
 
     function renderFilteredActivities() {
 
-        function renderInnerValues(description, innerValues) {
-            let values = []
-
-            innerValues.map((value) => {
-                values.push(
-                    <AcitivityDescription key={value.id} description={description} value={value} />
-                )
-            })
-
-            return values
-        }
-
         function getFilteredInnerValues(innerValues) {
             let values = []
 
@@ -138,9 +155,9 @@ export default function ActivitiesCard(props) {
         let filteredActivities = []
         let filteredInnerValues = []
         let activitiesTimeLineEntries = []
-        let keys = Object.keys(activitiesObject)
+        //let keys = Object.keys(activitiesObject)
 
-        keys.map((key) => {
+        activitiesKeys.map((key) => {
             if ( key !== 'total' ) {
                 let activityEntry = {
                     'activityId': activitiesObject[key]['activity_id'], 
@@ -186,8 +203,7 @@ export default function ActivitiesCard(props) {
             </div>
 
             <div className="activities-search">
-                <form onSubmit={handleSearch}>
-
+                <form>
                     <div className="search-container">
                         <SearchIcon style={{marginRight: 5}} />
                         <input
@@ -201,7 +217,7 @@ export default function ActivitiesCard(props) {
             </div>
 
             <div className="activities-indicators">
-                <div className="small-indicator-container">
+                <div className="small-indicator-container" onClick={() => keepActivityKey('total')}>
                     <div className="value" style={{backgroundColor: '#6d6d6d', color: 'white'}}>
                         <p>{total}</p>
                     </div>
@@ -210,7 +226,7 @@ export default function ActivitiesCard(props) {
                     </div>
                 </div>
 
-                <div className="small-indicator-container">
+                <div className="small-indicator-container" onClick={() => keepActivityKey(originalActivitiesKey[1])}>
                     <div className="value" style={{backgroundColor: 'red', color: 'white'}}>
                         <p>{props.activities !== undefined ? props.activities['late']['total'] : ''}</p>
                     </div>
@@ -219,7 +235,7 @@ export default function ActivitiesCard(props) {
                     </div>
                 </div>
 
-                <div className="small-indicator-container">
+                <div className="small-indicator-container" onClick={() => keepActivityKey(originalActivitiesKey[2])}>
                     <div className="value" style={{backgroundColor: 'blue', color: 'white'}}>
                         <p>{props.activities !== undefined ? props.activities['in_progress']['total'] : ''}</p>
                     </div>
@@ -228,7 +244,7 @@ export default function ActivitiesCard(props) {
                     </div>
                 </div>
 
-                <div className="small-indicator-container">
+                <div className="small-indicator-container" onClick={() => keepActivityKey(originalActivitiesKey[3])}>
                     <div className="value" style={{backgroundColor: 'orange', color: 'white'}}>
                         <p>{props.activities !== undefined ? props.activities['expected']['total'] : ''}</p>
                     </div>
@@ -237,7 +253,7 @@ export default function ActivitiesCard(props) {
                     </div>
                 </div>
 
-                <div className="small-indicator-container">
+                <div className="small-indicator-container" onClick={() => keepActivityKey(originalActivitiesKey[4])}>
                     <div className="value" style={{backgroundColor: 'green', color: 'white'}}>
                         <p>{props.activities !== undefined ? props.activities['finished']['total'] : ''}</p>
                     </div>
