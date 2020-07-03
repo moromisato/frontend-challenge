@@ -1,8 +1,10 @@
 .sales-container {
     display: flex;
+    flex-direction: column;
     flex: 1;
     height: 100%;
     width: 100%;
+    justify-content: center;
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
