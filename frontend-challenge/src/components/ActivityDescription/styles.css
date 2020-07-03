@@ -1,0 +1,32 @@
+.acitivity-description-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+.description-icon {
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.description-texts {
+    display: flex;
+    flex-direction: column;
+}
+
+.description-texts p {
+    font-weight: normal;
+}
+
+.description-text {
+    color: black;
+}
+
+.description-responsible {
+    color: gray;
+}
+
+.description-date {
+    color: gray;
+}
