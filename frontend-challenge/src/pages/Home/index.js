@@ -6,6 +6,7 @@ import SalesCard from '../../components/SalesCard';
 import CreditLimitCard from '../../components/CreditLimitCard';
 import FinancialSecuritiesCard from '../../components/FinancialSecuritiesCard';
 import LocationCard from '../../components/LocationCard';
+import ActivitiesCard from '../../components/ActivitiesCard';
 
 import { User } from '../../mock';
 import './styles.css';
@@ -38,7 +39,7 @@ export default function Home() {
                     <FinancialSecuritiesCard financialSecurities={user['financial_securities']} />
                 </div>
                 <div className="third-column">
-
+                    <ActivitiesCard />
                 </div>
             </div>
         </div>
