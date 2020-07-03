@@ -101,6 +101,83 @@ export default function ActivitiesCard(props) {
         return activitiesTimeLineEntries
     }
 
+    function renderFilteredActivities() {
+
+        function renderInnerValues(description, innerValues) {
+            let values = []
+
+            innerValues.map((value) => {
+                values.push(
+                    <AcitivityDescription key={value.id} description={description} value={value} />
+                )
+            })
+
+            return values
+        }
+
+        function getFilteredInnerValues(innerValues) {
+            let values = []
+
+            values = innerValues.filter((value) => {
+                if ( value['responsible'].includes(searchTerm) ) {
+                    return true
+                } else if ( value['description'].includes(searchTerm) ) {
+                    return true
+                } else if ( value['date'].includes(searchTerm) ) {
+                    return true
+                } else {
+                    return false
+                }
+                
+            })
+
+            return values
+        }
+
+        let activities = []
+        let filteredActivities = []
+        let filteredInnerValues = []
+        let activitiesTimeLineEntries = []
+        let keys = Object.keys(activitiesObject)
+
+        keys.map((key) => {
+            if ( key !== 'total' ) {
+                let activityEntry = {
+                    'activityId': activitiesObject[key]['activity_id'], 
+                    'description': activitiesObject[key]['description'],
+                    'total': activitiesObject[key]['total'],
+                    'values': activitiesObject[key]['values']
+                }
+
+                activities.push(activityEntry)
+                        
+            }
+        })
+
+        filteredActivities = activities.filter((activity) => {
+
+            filteredInnerValues = getFilteredInnerValues(activity['values'])
+
+            if ( filteredInnerValues.length > 0 ) {
+                activitiesTimeLineEntries.push(
+                    <VerticalTimelineElement
+                        style={{margin: 0}}
+                        key={activity['activityId']}
+                        className="vertical-timeline-element--work"
+                        iconStyle={{ background: getDescriptionColor(activity['description']) , color: '#fff' }}
+                    >
+                            <h3 className="vertical-timeline-element-title">{activity['description']}</h3>
+                            
+                            {renderInnerValues(activity['description'], filteredInnerValues)}
+    
+                    </VerticalTimelineElement>
+                )
+            }
+        })
+
+        return activitiesTimeLineEntries
+    }
+
     return (
         <div className="activities-container">
 
@@ -174,7 +251,7 @@ export default function ActivitiesCard(props) {
             <div className="activities-time-line hide-scrollbar">
 
                 <VerticalTimeline layout='1-column' className="vertical-timeline-custom-line" >
-                    {renderActivities()}
+                    {searchTerm !== '' ? renderFilteredActivities() : renderActivities()}
                 </VerticalTimeline>
 
             </div>
