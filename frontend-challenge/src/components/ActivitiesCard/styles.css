@@ -1,5 +1,77 @@
 .activities-container {
     display: flex;
+    flex-direction: column;
     flex: 1;
     background-color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.activities-search {
+    margin-top: 10px;
+}
+
+.search-container {
+    display: flex;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+}
+
+.activities-indicators {
+    display: flex;
+    flex-direction: row;
+}
+
+.small-indicator-container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.value {
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.6em;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.description {
+    background-color: white;
+}
+
+.activities-time-line {
+    height: 75vh;
+    margin-top: 25px;
+    overflow-y: scroll;
+}
+
+.hideScrollbar::-webkit-scrollbar { width: 0 !important }
+
+/* CUSTOM LINE COLOR */
+/* The line */
+
+.vertical-timeline.vertical-timeline-custom-line::before {
+    background: lightgray;
+}
+
+/* Icon container's border */
+.vertical-timeline.vertical-timeline-custom-line .vertical-timeline-element--work .vertical-timeline-element-icon {
+    box-shadow: 0 0 0 0px #1976d2, inset 0 0px 0 rgba(0, 0, 0, 0.08), 0 0px 0 0px rgba(0, 0, 0, 0.05);
+}
+
+.vertical-timeline.vertical-timeline-custom-line .vertical-timeline-element--education .vertical-timeline-element-icon {
+    box-shadow: 0 0 0 4px #c2185b, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
